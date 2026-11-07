@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vault-950: #05060f;
+  --color-vault-900: #090b1a;
+  --color-vault-850: #0d1024;
+  --color-vault-800: #12162f;
+  --color-vault-700: #1b2147;
+  --color-vault-600: #2a3163;
+  --color-vault-500: #4c56a8;
+  --color-vault-400: #7c86e0;
+  --color-vault-300: #aeb6f5;
+  --color-vault-200: #d9ddfb;
+  --color-vault-100: #eef1ff;
+  --color-accent: #34e5c4;
+  --color-accent-soft: #0e2b34;
+  --font-sans: "Segoe UI", "Noto Kufi Arabic", "Tahoma", system-ui, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1100px 600px at 85% -10%, rgba(76, 86, 168, 0.28), transparent 60%),
+    radial-gradient(900px 500px at 5% 0%, rgba(52, 229, 196, 0.12), transparent 55%),
+    #05060f;
+  color: #eef1ff;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: rgba(52, 229, 196, 0.3);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(124, 134, 224, 0.35);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 134, 224, 0.55);
+}
+
+.glass {
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.glow-ring {
+  box-shadow:
+    0 0 0 1px rgba(52, 229, 196, 0.25),
+    0 20px 60px -20px rgba(52, 229, 196, 0.35);
+}
+
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-up {
+  animation: float-up 0.45s ease both;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(124, 134, 224, 0.05) 25%,
+    rgba(124, 134, 224, 0.25) 37%,
+    rgba(124, 134, 224, 0.05) 63%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+.pin-dot {
+  transition: all 0.15s ease;
+}
+
+input[type="range"] {
+  accent-color: #34e5c4;
+}
